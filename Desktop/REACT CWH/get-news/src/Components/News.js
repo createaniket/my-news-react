@@ -21,6 +21,9 @@ const [totalResults , setTotalResults] = useState( 0)
   const updateNews =  async() => {
    
     props.setProgress(0);
+
+
+   
     const url =`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=b99b3270eca94ad1a78191abac8dfcd7&page=${page}&pagesize=${props.pageSize}`;
 
     setLoading(true)
@@ -28,7 +31,7 @@ const [totalResults , setTotalResults] = useState( 0)
     props.setProgress(30);
 
 
-
+console.log(data , "uuyfvj")
     let parsedData = await data.json();
     console.log(parsedData.articles , " icgueargaurogv yuer g")
     props.setProgress(70);
@@ -46,6 +49,7 @@ const [totalResults , setTotalResults] = useState( 0)
 
     
    updateNews();
+   // eslint-disable-next-line
   }, [])
 
   // updateNews();
